@@ -24,10 +24,25 @@ TODO: Answer questions 1-3 at the bottom of this file. Put your answers in this 
 #Merges two lists
 def merge(left, right):
     result = []
-    i, j = 0, 0
+    i, j, k = 0, 0, 0
     while i < len(left) and j < len(right):
-        #TODO
-    #TODO
+        if (left[i] < right[j]):
+            result[k] = left[i]
+            i += 1
+        else:
+            result[k] = right[j]
+            j += 1
+        k += 1
+    if (i >= len(left)):
+        while (j < len(right)):
+            result[k] = right(j)
+            j += 1
+            k += 1
+    elif (j >= len(right)):
+        while (i < len(left)):
+            result[k] = left[i]
+            i += 1
+            k += 1
     return result
 
 #The merge sort algorithm
@@ -35,9 +50,9 @@ def merge_sort(arr):
     if len(arr) <= 1:
         return arr
     mid = len(arr) // 2
-    left = #TODO
-    right = #TODO
-    return #TODO
+    left = merge_sort(arr[0:mid])
+    right = merge_sort(arr[mid+1:len(arr)-1])
+    return merge(left, right)
 
 
 
@@ -50,8 +65,15 @@ print(sorted == [1,2,3,5,5,6,9])
 
 #Returns an integer representing the partition location in arr.
 def partition(arr, low, high):
-    #TODO
-    return TODO
+
+
+    pivotitem = arr[low]
+    j = low
+
+    for i in range 
+
+
+    return #TODO
 
 #The quicksort algorithm
 def quicksort(arr, low, high):
